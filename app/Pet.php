@@ -11,7 +11,7 @@ class Pet extends Model
         return $this->belongsTo('App\Person');
     }
 
-    public function pet()
+    public function photo()
     {
         return $this->belongsTo('App\Photo');
     }
