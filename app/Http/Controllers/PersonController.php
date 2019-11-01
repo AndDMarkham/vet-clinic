@@ -24,12 +24,14 @@ class PersonController extends Controller
         // leftJoin('pets', 'people.id', '=', 'person_id')
     }
 
-    public function show($name)
+    public function show($id)
     {
-       $person = Person::findOrFail($name);
+       $person = Person::with('pets.photo')
+       ->where('id', $id)
+       ->get();
 
-       return $person;
-    //    return view('person.show', compact('person'));
+    //    return $person;
+       return view('person.show', compact('person'));
     }
 
     public function create()

@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pet extends Model
 {
+    protected $fillable = [
+        'name',
+        'species',
+        'breed',
+        'weight',
+        'age'
+    ];
+
     public function person()
     {
         return $this->belongsTo('App\Person');
