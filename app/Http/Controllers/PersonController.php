@@ -31,7 +31,7 @@ class PersonController extends Controller
        ->where('id', $id)
        ->get();
 
-    //    return $person;
+        // return $person;
        return view('person.show', compact('person'));
     }
 

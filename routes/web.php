@@ -21,3 +21,4 @@ Route::get('/new_person', 'PersonController@create');
 Route::post('/new_person', 'PersonController@store');
 
 Route::get('/pets', 'PetController@index');
+Route::get('/pets/{id}', 'PetController@show');

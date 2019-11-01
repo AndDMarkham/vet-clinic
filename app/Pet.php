@@ -23,4 +23,9 @@ class Pet extends Model
     {
         return $this->belongsTo('App\Photo');
     }
+
+    // public function reports()
+    // {
+    //     return $this->hasMany('App\Report');
+    // }
 }

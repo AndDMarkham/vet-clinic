@@ -14,9 +14,13 @@ class Person extends Model
         'email'
     ];
 
-    
     public function pets()
     {
         return $this->hasMany('App\Pet');
     }
+
+    // public function reports()
+    // {
+    //     return $this->hasMany('App\Report');
+    // }
 }
