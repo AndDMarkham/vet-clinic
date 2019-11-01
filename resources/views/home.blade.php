@@ -8,7 +8,7 @@
 @foreach($person as $person)
 <div>
     <h3>
-        {{$person->first_name}} {{$person->surname}} <a href="{{   action('PersonController@show', $person->first_name)     }}"></a>
+        {{$person->first_name}} {{$person->surname}} <a href="{{   action('PersonController@show', $person->id)     }}">Go to person</a>
     </h3>
     <div>
         <p>
