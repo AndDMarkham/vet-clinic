@@ -17,6 +17,7 @@ class PersonController extends Controller
         ->where('first_name', 'LIKE', '%'.$search.'%' )
         ->orWhere('surname','LIKE','%'.$search.'%')
         // ->orWhere('pets', 'LIKE', '%'.$search.'%')
+        ->limit(20)
         ->get();
         // return $person;
         return view('home', compact('person'));
