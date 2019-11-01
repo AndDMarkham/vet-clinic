@@ -26,8 +26,8 @@ class PersonRequest extends FormRequest
         return [
             'first_name' => 'required|max:100',
             'surname' => 'required|max:100',
-            'address' => 'required|max100',
-            'phone' => 'required|numeric|min:10|max:10',
+            'address' => 'max100',
+            'phone' => 'numeric|min:10|max:10',
             'email' => 'email|max:100'
         ];
     }
@@ -37,12 +37,12 @@ class PersonRequest extends FormRequest
         return [
             'first_name.required' => 'First name is required',
             'surname.required' => 'Surname is required',
-            'address.required' => 'Address is required',
-            'phone.required' => 'Phone number is required',
+            // 'address.required' => 'Address is required',
+            // 'phone.required' => 'Phone number is required',
             'phone.numeric' => 'Number is not in the requested format',
             'phone.min' => 'Phone number is not complete',
             'phone.max' => 'Phone number exceeds max number of digits',
-            'email.required' => 'E-mail address is required',
+            // 'email.required' => 'E-mail address is required',
             'email.email' => 'E-mail address is not in the requested format'
         ];
     }

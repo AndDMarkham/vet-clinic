@@ -10,7 +10,7 @@ use App\Http\Requests\PersonRequest;
 class PersonController extends Controller
 {
     
-    public function index (Request $request)
+    public function index(Request $request)
     {
         $search = $request->input('name');
         $person = Person::with('pets.photo')
@@ -22,6 +22,19 @@ class PersonController extends Controller
         return view('home', compact('person'));
 
         // leftJoin('pets', 'people.id', '=', 'person_id')
+    }
+
+    public function show($name)
+    {
+       $person = Person::findOrFail($name);
+
+       return $person;
+    //    return view('person.show', compact('person'));
+    }
+
+    public function create()
+    {
+        return view('person.create');
     }
 
     public function store(PersonRequest $request)

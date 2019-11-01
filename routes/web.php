@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', 'PersonController@index');
+Route::get('/new_person', 'PersonController@create');
 Route::post('/new_person', 'PersonController@store');
