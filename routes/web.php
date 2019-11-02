@@ -25,4 +25,4 @@ Route::get('/pets/{id}', 'PetController@show');
 
 Route::get('/reports', 'ReportsController@index');
 Route::get('/reports/{id}', 'ReportsController@show');
-Route::get('/reports/create', 'ReportsController@create');
+Route::get('/reports/create/{id}', 'ReportsController@create');

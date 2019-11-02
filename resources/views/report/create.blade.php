@@ -16,15 +16,16 @@
 </div>
 @endif
 
-<form action="{{  action('ReportsController@store')  }}">
+{{-- <form action="{{  action('ReportsController@store',$report->id)}}" method="post"> --}}
+<form>
     @csrf
 
     <div class="form-group">
-        <label for="first_name">Date</label>
-        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="enter name...">
+        <label for="date">Date</label>
+        <input type="text" class="form-control" name="date" id="date" placeholder="enter date...">
 
-        <label for="email">Text</label>
-        <input type="text" class="form-control" name="email" id="email" placeholder="enter email...">
+        <label for="text">Text</label>
+        <input type="text" class="form-control" name="text" id="text" placeholder="enter summary of appointment...">
 
         <br>
         <button type="submit" class="btn btn-primary">Submit</button>

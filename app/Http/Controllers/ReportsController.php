@@ -24,16 +24,17 @@ class ReportsController extends Controller
        
     }
     
-    public function create()
+    public function create($report)
     {
         return view('report.create');
     }
 
-    public function store(ReportRequest $request)
+    public function store($report, ReportRequest $request)
     {
-        $report = Report::create($request->all());
-
-        return redirect(action('ReportController@index'));
+        $report = new Report();
+        $report->date= $request->input('date');
+        $report->date= $request->input('text');
+        $report->save();
+        return redirect(action('ReportsController@index'));
     }
 }
-
