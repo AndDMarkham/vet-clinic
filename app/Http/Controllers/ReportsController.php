@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Report;
+use App\Pet;
 
 class ReportsController extends Controller
 {
@@ -14,6 +15,15 @@ class ReportsController extends Controller
         return $report;
     }
 
+    public function show($pet_id)
+    {
+        $report = Report::with('pet')
+        ->where('pet_id', $pet_id)
+        ->get();
+        return view('report.show', compact('report'));
+       
+    }
+    
     public function create()
     {
         return view('report.create');

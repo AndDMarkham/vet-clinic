@@ -37,6 +37,7 @@
             <p>
                 {{$pet->age}}
             </p>
+            <a href="{{   action('ReportsController@show', $pet->id)     }}">Go to pet reports</a>
         </div>
         @endforeach
     </div>
